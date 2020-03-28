@@ -1,0 +1,27 @@
+{
+  "name": "corario",
+  "version": "1.0.0",
+  "description": "Corario Adventista",
+  "main": "index.js",
+  "repository": "https://github.com/ma0c/corario.git",
+  "author": "ma0c <ma0@contraslash.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --host",
+    "build": "webpack"
+  }
+}
