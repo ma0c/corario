@@ -20,12 +20,19 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'source-map',
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         use: [babelLoader]
-      }
+      },
+      {
+        test: /\.md$/,
+        use: [require.resolve('raw-loader')]
+      },
     ]
   },
   plugins: [
