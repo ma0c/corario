@@ -11,9 +11,9 @@ export const PATH_SONGS = "/canciones";
 
 const routes = (
     <Switch>
-        <Route exact path={PATH_HOME} component={Home}/>
+        <Route exact path={PATH_HOME} component={Songs}/>
         <Route exact path={PATH_SONGS} component={Songs}/>
-        <Route component={NotFound}/>
+        <Route component={Songs}/>
     </Switch>
 );
 

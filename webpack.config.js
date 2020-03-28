@@ -17,7 +17,9 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve('dist'),
-    filename: 'bundle.js'
+    filename: 'assets/js/[name]-[chunkhash].js',
+    chunkFilename: 'assets/js/[name]-[chunkhash].js',
+    publicPath: 'https://ma0c.github.io/corario/'
   },
   devtool: 'source-map',
   devServer: {

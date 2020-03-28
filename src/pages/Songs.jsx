@@ -1,18 +1,33 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+const cache = {};
+
 function importAll (r) {
-  r.keys().forEach(r);
+  r.keys().forEach(key => cache[key] = r(key));
 }
 
 importAll(require.context('../../letras/', true, /\.md$/));
 
 const Songs = () => {
-  return (
+    const titles = Object.keys(cache).map((name, index) => (
+        <div key={index}>
+            {name}
+            <ReactMarkdown source={cache[name].default} />
+        </div>
+        )
+    );
+    console.log(cache);
+    return (
       <div>
-        <p>
+        <h1>
           Songs
-        </p>
+        </h1>
+
+            {titles}
+
+
       </div>
-  )
+    )
 };
 
 export default Songs
