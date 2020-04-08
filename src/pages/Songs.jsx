@@ -25,7 +25,6 @@ const Songs = () => {
         </StyledDiv>
         )
     );
-    console.log(cache);
     return (
       <div>
         <CustomTitle>
