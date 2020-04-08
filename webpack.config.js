@@ -19,7 +19,7 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'assets/js/[name]-[chunkhash].js',
     chunkFilename: 'assets/js/[name]-[chunkhash].js',
-    publicPath: 'https://ma0c.github.io/corario/'
+
   },
   devtool: 'source-map',
   devServer: {

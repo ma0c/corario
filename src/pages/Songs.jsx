@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import styled from 'styled-components';
 const cache = {};
 
 function importAll (r) {
@@ -8,22 +9,30 @@ function importAll (r) {
 
 importAll(require.context('../../letras/', true, /\.md$/));
 
+const CustomTitle = styled.h1`
+color: red;
+`;
+
+const StyledDiv = styled.div`
+border: 1px solid black
+`;
+
 const Songs = () => {
-    const titles = Object.keys(cache).map((name, index) => (
-        <div key={index}>
+    const songs = Object.keys(cache).map((name, index) => (
+        <StyledDiv key={index}>
             {name}
             <ReactMarkdown source={cache[name].default} />
-        </div>
+        </StyledDiv>
         )
     );
     console.log(cache);
     return (
       <div>
-        <h1>
+        <CustomTitle>
           Songs
-        </h1>
+        </CustomTitle>
 
-            {titles}
+            {songs}
 
 
       </div>
