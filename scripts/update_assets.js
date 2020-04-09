@@ -31,7 +31,7 @@ fs.readdir(SOURCE_MUSIC, (err, musicFiles) => {
 
 console.log("Processin lyrics");
 
-const LETRAS_JSON_PATH = "src/services/dataProvider/letras.json";
+const LYRICS_JSON_PATH = "src/services/dataProvider/lyrics.json";
 
 const SOURCE_LYRICS = "letras";
 
@@ -45,9 +45,9 @@ fs.readdir(SOURCE_LYRICS, (err, lyricFiles) => {
             content: currentFile,
         }
     });
-    fs.writeFile(LETRAS_JSON_PATH, JSON.stringify(all_lyrics, null, 2), (error) => {
+    fs.writeFile(LYRICS_JSON_PATH, JSON.stringify(all_lyrics, null, 2), (error) => {
         if (error) throw error;
-        console.log(`File ${LETRAS_JSON_PATH} saved successfully`)
+        console.log(`File ${LYRICS_JSON_PATH} saved successfully`)
 
     });
 });

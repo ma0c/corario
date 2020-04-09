@@ -35,6 +35,20 @@ module.exports = {
         test: /\.md$/,
         use: [require.resolve('raw-loader')]
       },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            query: {
+              sourceMap: false,
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [

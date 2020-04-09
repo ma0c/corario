@@ -5,6 +5,8 @@ import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from './store/configureStore';
 import routes from './routes';
 
+import './assets/styles/main.scss'
+
 const store = configureStore();
 
 const App = () => {
