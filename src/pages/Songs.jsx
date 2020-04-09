@@ -1,13 +1,10 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
-const cache = {};
+import { Link } from 'react-router-dom'
 
-function importAll (r) {
-  r.keys().forEach(key => cache[key] = r(key));
-}
+import { Songs as SongsModel } from '../services/dataProvider/Songs';
 
-importAll(require.context('../../letras/', true, /\.md$/));
+import { PATH_SONG_WITH_ARG } from '../routes'
 
 const CustomTitle = styled.h1`
 color: red;
@@ -18,22 +15,22 @@ border: 1px solid black
 `;
 
 const Songs = () => {
-    const songs = Object.keys(cache).map((name, index) => (
+    const sortedSongs = new SongsModel();
+    const songs = sortedSongs.songs.map((song, index) => (
         <StyledDiv key={index}>
-            {name}
-            <ReactMarkdown source={cache[name].default} />
+            <Link to={PATH_SONG_WITH_ARG(song.name)}>
+                {song.title}
+            </Link>
         </StyledDiv>
         )
     );
+
     return (
       <div>
         <CustomTitle>
           Songs
         </CustomTitle>
-
             {songs}
-
-
       </div>
     )
 };
