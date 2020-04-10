@@ -11,9 +11,10 @@ import NotFound from '../pages/404.jsx';
 export const PATH_HOME = "/";
 export const PATH_SONGS = "/canciones";
 export const PATH_SONG = "/cancion/:nombre";
-export const PATH_SCORE = "/partitura";
+export const PATH_SCORE = "/cancion/:nombre/partitura";
 
 export const PATH_SONG_WITH_ARG = (arg) => `/cancion/${arg}`;
+export const PATH_SCORE_WITH_ARG = (arg) => `/cancion/${arg}/partitura`;
 
 const routes = (
     <Switch>

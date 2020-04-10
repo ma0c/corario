@@ -7,7 +7,8 @@ export class Songs {
         this.songs.forEach(song => {
             song.title = song.name.split("-");
             song.title[1] = song.title[1].charAt(0).toUpperCase() + song.title[1].slice(1);
-            song.title = song.title.join(" ")
+            song.title = song.title.join(" ");
+            song.content = song.content.replace(/\n/g, '  \n');
 
         })
     }

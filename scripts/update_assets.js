@@ -45,7 +45,7 @@ fs.readdir(SOURCE_LYRICS, (err, lyricFiles) => {
             content: currentFile,
         }
     });
-    fs.writeFile(LYRICS_JSON_PATH, JSON.stringify(all_lyrics, null, 2), (error) => {
+    fs.writeFile(LYRICS_JSON_PATH, JSON.stringify(all_lyrics, null, 2), 'UTF-8', (error) => {
         if (error) throw error;
         console.log(`File ${LYRICS_JSON_PATH} saved successfully`)
 

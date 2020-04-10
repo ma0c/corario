@@ -36,6 +36,10 @@ module.exports = {
         use: [require.resolve('raw-loader')]
       },
       {
+        test: /\.musicxml$/,
+        use: [require.resolve('raw-loader')]
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
