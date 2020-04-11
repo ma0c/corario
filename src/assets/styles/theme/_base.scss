@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Bethan';
+  src: url('../fonts/BethanWhite.otf') format('opentype');
+  font-style: normal;
+}
+
 * {
-  font-family: 'Roboto', serif;
+  font-family: 'Bethan', monospace;
 }
