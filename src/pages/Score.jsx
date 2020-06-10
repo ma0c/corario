@@ -15,7 +15,7 @@ class Score extends React.Component {
         this.container = ReactDOM.findDOMNode(this);
         this.score = this.container.querySelector('.score');
         this.osmd = new OpenSheetMusicDisplay(this.score, {autoResize: false});
-        if (this.score) {
+        if (this.scoreFile) {
             const promise = this.osmd.load(this.scoreFile.default);
             promise.then(()=> this.osmd.render());
         }
